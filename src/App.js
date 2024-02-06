@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {Map} from './components/Map';
 import {useJsApiLoader} from '@react-google-maps/api';
 import { getBrowserLocation } from './components/geolocation';
+import { Buttons } from './components/button_filter/Buttons';
 const API_KEY_MAP=process.env.REACT_APP_API_KEY
 const default_center = {
   lat:53.9,
@@ -27,8 +28,10 @@ function App() {
 
   return (
     <div className="">
-    {isLoaded ?
-    <Map center={center}/>
+    {isLoaded ?(
+      <>
+    <Buttons/>
+    <Map center={center}/></>)
    : <h2>Problems</h2>}
     </div>)
 }

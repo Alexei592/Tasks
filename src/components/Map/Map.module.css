@@ -1,11 +1,16 @@
 .container
 {
-    width: 100vw;
-    height:100vh;
+    width: 80vw;
+    height:80vh;
+    margin-left: 17%;
 }
 
 body
 {
     padding: 0;
     margin: 0;
+    width: 98vw; /* Set the width to 100% of the viewport width */
+    height: 98vh; /* Set the height to 100% of the viewport height */
+    background: linear-gradient(45deg, #9890e3, #b1f4cf);
+    background-size: cover;
 }
