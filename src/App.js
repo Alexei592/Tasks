@@ -12,6 +12,8 @@ const default_center = {
 function App() {
 
   const [center,SetCenter]=useState(default_center)
+  const [attractions, set_attractions] = useState([]);
+  const [position_attractions,set_position]=useState([]);
 
   useEffect(()=>{getBrowserLocation().then((curlLock)=>{
     SetCenter(curlLock)
@@ -30,9 +32,9 @@ function App() {
     <div className="">
     {isLoaded ?(
       <>
-    <Buttons/>
-    <Map center={center}/></>)
-   : <h2>Problems</h2>}
+    <Buttons set_attractions={set_attractions} set_position={set_position}  center={center}/>
+    <Map attraction={attractions} position_attractions={position_attractions} center={center}/></>)
+   : <h2>Что-то пошло не так</h2>}
     </div>)
 }
 
