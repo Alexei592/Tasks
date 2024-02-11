@@ -27,11 +27,11 @@ const Buttons=({center,set_attractions,set_position})=>
 
 
 
-    return <div className={mod.Buttons_Filters}>
-        <button onClick={() => attraction_func('tourism=museum')}>Музеи</button>
-        <button onClick={() => attraction_func('leisure=park')}>Парки</button>
-        <button onClick={() => attraction_func('amenity=restaurant')}>Рестораны</button>
-        <button onClick={() => attraction_func('amenity=cinema')}>Кинотеатры</button>
+    return <div className={`${mod.Buttons_Filters} col-5`}>
+        <button className='col-2' onClick={() => attraction_func('tourism=museum')}>Музеи</button>
+        <button className='col-2' onClick={() => attraction_func('leisure=park')}>Парки</button>
+        <button className='col-3' onClick={() => attraction_func('amenity=restaurant')}>Рестораны</button>
+        <button className='col-3' onClick={() => attraction_func('amenity=cinema')}>Кинотеатры</button>
 
     </div>
 }
