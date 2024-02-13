@@ -1,5 +1,5 @@
 import React from 'react'
-import {CircleF, GoogleMap, MarkerF,DirectionsService, DirectionsRenderer} from '@react-google-maps/api';
+import {CircleF, GoogleMap, MarkerF,DirectionsRenderer} from '@react-google-maps/api';
 import { useRef,useState,useEffect } from 'react';
 import s from './Map.module.css'
 
@@ -28,8 +28,7 @@ const Map = ({center,attraction,position_attractions,url})=>{
       
     
     const mapRef=useRef(undefined);
-    const directionsServiceRef = useRef(null);
-    const directionsRendererRef = useRef(null);
+    const [directions, setDirections] = useState(null);
     const [point_otp,set_point]=useState(undefined);
     const [markers,setMarker]=useState([]);
 
@@ -72,29 +71,22 @@ const Map = ({center,attraction,position_attractions,url})=>{
         alert("пункт назначения не выбран");
         return;
       }
-      const directionsService = directionsServiceRef.current;
-      const directionsRenderer = directionsRendererRef.current;
-  
-      directionsService.route(
-        {
-          origin: center,
-          destination: point_otp,
-          travelMode: 'DRIVING',
-        },
-        (response, status) => {
-          if (status === 'OK') {
-            directionsRenderer.setDirections(response);
-          } else {
-            console.error('Ошибка при получении маршрута:', status);
-          }
-        }
-      );
+      const currentLocation =center;
+      const destination = point_otp;
+
+  fetch(`https://www.mapquestapi.com/directions/v2/route?key=YOUR_API_KEY&from=${currentLocation}&to=${destination}`)
+    .then(response => response.json())
+    .then(data => {
+   
+      setDirections(data.directions);
+    })
+    .catch(error => {
+      console.error('Ошибка при получении маршрута:', error);
+    });
     };
       
         const onLoad = React.useCallback(function callback(map) {
         mapRef.current=map;
-        directionsServiceRef.current = new window.google.maps.DirectionsService();
-        directionsRendererRef.current = new window.google.maps.DirectionsRenderer();
         }, [])
 
         const onUnmount = React.useCallback(function callback() {
@@ -117,7 +109,7 @@ const Map = ({center,attraction,position_attractions,url})=>{
             ></CircleF>
             <MarkerF position={center} icon={{url:'/star.png'}} label={{text:'Вы'}}/>
            {markers}
-           <DirectionsRenderer />
+           {directions && <DirectionsRenderer directions={directions} />}
             </GoogleMap>
             <button style={{marginLeft:"32%", marginTop:"0.5vw"}} onClick={calculateDirections}>Построить маршрут</button>
     </div>
