@@ -1,9 +1,10 @@
 .container
 {
-    width: 80vw;
+    width: 90vw;
     height:80vh;
-    margin-left: 17%;
+    margin-left: 5%;
     margin-top: 2vw;
+    display: flex;
 }
 
 body

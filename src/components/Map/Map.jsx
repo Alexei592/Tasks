@@ -2,9 +2,10 @@ import React from 'react'
 import {CircleF, GoogleMap, MarkerF,DirectionsRenderer} from '@react-google-maps/api';
 import { useRef,useState,useEffect } from 'react';
 import s from './Map.module.css'
+import {Information_Marker} from './Information_Marker/Information_Marker'
 
 const containerStyle = {
-    width: '80%',
+    width: '65%',
     height: '100%'
   };
 
@@ -31,6 +32,7 @@ const Map = ({center,attraction,position_attractions,url})=>{
     const [directions, setDirections] = useState(null);
     const [point_otp,set_point]=useState(undefined);
     const [markers,setMarker]=useState([]);
+    const [name_use_attraction,set_name]=useState([null,false]);
 
     useEffect(() => {
 
@@ -56,6 +58,7 @@ const Map = ({center,attraction,position_attractions,url})=>{
               lng: event.latLng.lng()
             };
             set_point(markerPosition);
+            set_name([label.text,true]);
             console.log(markerPosition);
           }}
         />
@@ -111,7 +114,9 @@ const Map = ({center,attraction,position_attractions,url})=>{
            {markers}
            {directions && <DirectionsRenderer directions={directions} />}
             </GoogleMap>
-            <button style={{marginLeft:"32%", marginTop:"0.5vw"}} onClick={calculateDirections}>Построить маршрут</button>
+            <button style={{position:"absolute",marginLeft:"23%", marginTop:"0.5vw"}} onClick={calculateDirections}>Построить маршрут</button>
+            {name_use_attraction[1] ? (<Information_Marker name_attr={name_use_attraction[0]}/>) : (<></>)}
+            
     </div>
 }
 

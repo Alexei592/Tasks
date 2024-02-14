@@ -1,0 +1,29 @@
+.container
+{
+    height: 50vh;
+    background-color: rgb(219, 228, 250);
+    margin-left: 2vw;
+
+    img{
+        height: 40vh;
+    }
+
+ 
+}
+
+.izb
+{
+    align-items: center;
+    display: flex;
+    img
+    {
+        height: 4vh;
+    }
+
+    span
+    {
+        font-weight: 700;
+        font-size: 1vw;
+        color: chocolate;
+    }
+}

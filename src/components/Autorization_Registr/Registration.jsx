@@ -1,7 +1,8 @@
 import { useState } from "react";
 import {auth} from "../../firebase";
-import style from "./Autorization_Registr.module.css"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import style from "./Autorization_Registr.module.css";
+import {getFirestore,addDoc,collection} from "firebase/firestore";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 function Registration()
 {
     const [email,setEmail]=useState("");
@@ -10,6 +11,9 @@ function Registration()
     const [Error,SetError]=useState("");
     const Regisrt=(event)=>
     {
+        const db=getFirestore();
+
+
         event.preventDefault();
         if(email=="" || password=="" || Podpassword=="")
         {
@@ -24,6 +28,12 @@ function Registration()
         
        createUserWithEmailAndPassword(auth,email,password).then((user)=>{
             console.log(user);
+           
+            addDoc(collection(db,"users"),
+            {
+                email:email,
+                Attractions:[],
+            });
             setEmail("");
             setPassword("");
             SetError("");
