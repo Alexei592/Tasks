@@ -26,4 +26,27 @@
         font-size: 1vw;
         color: chocolate;
     }
+
+    span:hover
+    {
+        cursor: pointer;
+    }
+}
+
+.butt
+{
+    border-radius: 0.3vw;
+    border:none;
+    background-color: blueviolet;
+    color:white;
+    font-weight: 600;
+    font-size: 1.1vw;
+    margin-left: 9vw;
+}
+
+.butt:hover
+{
+    background-color: rgb(73, 51, 94);
+    color:rgb(245, 245, 245);
+    transition-duration: 0.5s;
 }

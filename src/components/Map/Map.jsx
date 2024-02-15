@@ -25,7 +25,7 @@ const defaultOptions={
 }
 
 
-const Map = ({center,attraction,position_attractions,url})=>{
+const Map = ({center,attraction,position_attractions,all_attraction,set_all_attraction})=>{
       
     
     const mapRef=useRef(undefined);
@@ -42,8 +42,9 @@ const Map = ({center,attraction,position_attractions,url})=>{
         
         const newMarkers = attraction.map((element, index) => {
           const position = position_attractions[index];
+          const name = element.tags?.name ? element.tags.name : element.name;
           const label = {
-            text: element.tags.name,
+            text: name,
             color: 'white',
             fontSize: '0.8vw',
             fontWeight: '500'
@@ -59,7 +60,6 @@ const Map = ({center,attraction,position_attractions,url})=>{
             };
             set_point(markerPosition);
             set_name([label.text,true]);
-            console.log(markerPosition);
           }}
         />
         ;
@@ -115,7 +115,7 @@ const Map = ({center,attraction,position_attractions,url})=>{
            {directions && <DirectionsRenderer directions={directions} />}
             </GoogleMap>
             <button style={{position:"absolute",marginLeft:"23%", marginTop:"0.5vw"}} onClick={calculateDirections}>Построить маршрут</button>
-            {name_use_attraction[1] ? (<Information_Marker name_attr={name_use_attraction[0]}/>) : (<></>)}
+            {name_use_attraction[1] ? (<Information_Marker set_all_attraction={set_all_attraction} set_name={set_name} all_attraction={all_attraction} name_attr={name_use_attraction[0]}/>) : (<></>)}
             
     </div>
 }

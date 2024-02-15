@@ -2,7 +2,7 @@ import { useState } from "react";
 import {auth} from "../../firebase";
 import style from "./Autorization_Registr.module.css";
 import {getFirestore,addDoc,collection} from "firebase/firestore";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword} from "firebase/auth";
 function Registration()
 {
     const [email,setEmail]=useState("");
@@ -32,7 +32,7 @@ function Registration()
             addDoc(collection(db,"users"),
             {
                 email:email,
-                Attractions:[],
+                Attraction:[],
             });
             setEmail("");
             setPassword("");

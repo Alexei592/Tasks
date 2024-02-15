@@ -2,17 +2,18 @@ import { useState } from "react";
 import {auth} from "../../firebase";
 import style from "./Autorization_Registr.module.css"
 import { signInWithEmailAndPassword } from "firebase/auth";
-function Autorization()
+function Autorization({set_all_attraction})
 {
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+
     const Autoriz=(event)=>
     {
         event.preventDefault();
-        signInWithEmailAndPassword(auth,email,password).then((user)=>{
-            console.log(user);
+        signInWithEmailAndPassword(auth,email,password).then(async (userAvt)=>{
             setEmail("");
             setPassword("");
+            console.log(userAvt);
 
         }).catch((error)=>
         {
