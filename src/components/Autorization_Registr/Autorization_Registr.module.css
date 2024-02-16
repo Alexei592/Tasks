@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 20vh;
+    border-radius: 2vw;
     input
     {
         margin-top: 1vw;
@@ -55,6 +56,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 20vh;
+    border-radius: 2vw;
     input
     {
         margin-top: 1vw;

@@ -59,7 +59,7 @@ const Map = ({center,attraction,position_attractions,all_attraction,set_all_attr
               lng: event.latLng.lng()
             };
             set_point(markerPosition);
-            set_name([label.text,true]);
+            set_name([label.text,true,markerPosition]);
           }}
         />
         ;
@@ -115,7 +115,7 @@ const Map = ({center,attraction,position_attractions,all_attraction,set_all_attr
            {directions && <DirectionsRenderer directions={directions} />}
             </GoogleMap>
             <button style={{position:"absolute",marginLeft:"23%", marginTop:"0.5vw"}} onClick={calculateDirections}>Построить маршрут</button>
-            {name_use_attraction[1] ? (<Information_Marker set_all_attraction={set_all_attraction} set_name={set_name} all_attraction={all_attraction} name_attr={name_use_attraction[0]}/>) : (<></>)}
+            {name_use_attraction[1] ? (<Information_Marker set_all_attraction={set_all_attraction} set_name={set_name} all_attraction={all_attraction} markerPosition={name_use_attraction[2]} name_attr={name_use_attraction[0]}/>) : (<></>)}
             
     </div>
 }

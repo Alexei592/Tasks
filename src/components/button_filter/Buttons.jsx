@@ -7,6 +7,8 @@ const Buttons=({center,set_attractions,set_position,attractions})=>
           const response = await fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node(around:1000,${center.lat},${center.lng})[${name_attr}];out;`);
           const data = await response.json();
           console.log(data.elements);
+          set_attractions([]);
+          set_position([]);
           set_attractions(data.elements);
           const attractions_lat_lon = data.elements.map(element => {
             return {
@@ -27,20 +29,13 @@ const Buttons=({center,set_attractions,set_position,attractions})=>
         if(attraction.length==0)
         {
           alert('Вы еще не добавляли места в избранные');
+          return;
         }
-        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(attraction)}&format=json&limit=${attraction.length}`);
-        const data = await response.json();
-
-          console.log(data);
-          if (data.length === 0) {
-            alert('Мы не смогли найти ваши избранные достопримечательности, приносим своё прощение!');
-            return
-          }
-          set_attractions(data);
-          const attractions_lat_lon = data.map(element => {
+          set_attractions(attraction);
+          const attractions_lat_lon = attraction.map(element => {
             return {
-              lat: parseFloat(element.lat),
-              lng: parseFloat(element.lon),
+              lat: parseFloat(element.position.lat),
+              lng: parseFloat(element.position.lng),
             };
           });
           set_position(attractions_lat_lon);

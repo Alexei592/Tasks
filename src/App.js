@@ -81,10 +81,10 @@ function App() {
     <div className="">
     {Aut_User ? (
       <>
-        <div style={{position:"absolute", display:'flex',justifyContent:'space-evenly',flexDirection:"column",marginTop:"-1vw"}}>
+        <div style={{position:"absolute", display:'flex',justifyContent:'space-evenly',flexDirection:"column",marginTop:"-1vw",marginLeft:"1vw"}}>
         <span>Ваш аккаунт:</span>
         <h2>{Aut_User.email}</h2>
-        <button onClick={()=>Exit_Account()}>Выйти из аккаунта</button>
+        <button style={{borderRadius:"2%",border:"none",backgroundColor:"#008074"}} onClick={()=>Exit_Account()}>Выйти из аккаунта</button>
         </div>
         {isLoaded ? (
           <>
@@ -108,7 +108,7 @@ function App() {
       </>
     ) : (
       <div style={{display:"flex", justifyContent:"space-evenly"}}>
-      <Autorization set_all_attraction={set_all_attraction}/>
+      <Autorization/>
       <Registration />
       </div>
     )}

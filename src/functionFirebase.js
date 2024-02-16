@@ -1,6 +1,6 @@
 import {query,where,collection,getDocs,getFirestore,updateDoc,doc,getDoc} from "firebase/firestore";
 import {auth} from "./firebase";
-    const Add_AttractionYou=async (name_attr,set_all_attraction)=>
+    const Add_AttractionYou=async (name_attr_with_position,set_all_attraction)=>
     {   
         const db=getFirestore();
         const userId=await getUsersByMail(auth.currentUser.email,db);
@@ -8,29 +8,29 @@ import {auth} from "./firebase";
             const userRef = doc(db, "users", userId);
             const userDoc = await getDoc(userRef);
             const currentAttraction = userDoc.data().Attraction;
-            const updatedAttraction = [...currentAttraction, value];
+            const updatedAttraction = [...currentAttraction, { name: value[0], position: value[1] }];
             set_all_attraction(updatedAttraction);
             await updateDoc(userRef, {
               ['Attraction']: updatedAttraction,
             });
          }
-         updateField(userId,name_attr);
+         updateField(userId,name_attr_with_position);
 }
 
-const Remove_AttractionYou = async (name_attr, set_all_attraction) => {
+const Remove_AttractionYou = async (name_attr_with_position, set_all_attraction) => {
     const db = getFirestore();
     const userId = await getUsersByMail(auth.currentUser.email, db);
     const updateField = async (userId, value) => {
       const userRef = doc(db, "users", userId);
       const userDoc = await getDoc(userRef);
       const currentAttraction = userDoc.data().Attraction;
-      const updatedAttraction = currentAttraction.filter(attr => attr !== value);
+      const updatedAttraction = currentAttraction.filter(attr => attr.name !== value[0]);
       set_all_attraction(updatedAttraction);
       await updateDoc(userRef, {
         ['Attraction']: updatedAttraction,
       });
     }
-    updateField(userId, name_attr);
+    updateField(userId, name_attr_with_position);
   }
 
 const All_Information_Attraction=async (UserId,set_all_attraction)=>
