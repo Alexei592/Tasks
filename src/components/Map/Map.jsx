@@ -5,7 +5,7 @@ import s from './Map.module.css'
 import {Information_Marker} from './Information_Marker/Information_Marker'
 
 const containerStyle = {
-    width: '65%',
+    width: '100%',
     height: '100%'
   };
 
@@ -114,7 +114,6 @@ const Map = ({center,attraction,position_attractions,all_attraction,set_all_attr
            {markers}
            {directions && <DirectionsRenderer directions={directions} />}
             </GoogleMap>
-            <button style={{position:"absolute",marginLeft:"23%", marginTop:"0.5vw"}} onClick={calculateDirections}>Построить маршрут</button>
             {name_use_attraction[1] ? (<Information_Marker set_all_attraction={set_all_attraction} set_name={set_name} all_attraction={all_attraction} markerPosition={name_use_attraction[2]} name_attr={name_use_attraction[0]}/>) : (<></>)}
             
     </div>

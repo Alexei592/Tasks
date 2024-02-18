@@ -41,7 +41,6 @@
     color:white;
     font-weight: 600;
     font-size: 1.1vw;
-    margin-left: 9vw;
 }
 
 .butt:hover
@@ -49,4 +48,32 @@
     background-color: rgb(73, 51, 94);
     color:rgb(245, 245, 245);
     transition-duration: 0.5s;
+}
+
+@media screen and (max-width:370px) {
+    .container
+    {
+    span
+    {
+        margin-left: 1vw;
+        font-weight: 700;
+        font-size: 3vw;
+        color: chocolate;
+    }
+    img {
+        margin-right: 3vw;
+    }
+
+    h1
+    {
+        font-size:1.3rem;
+    }
+
+    .butt
+    {
+        margin-right: 0.1rem;
+        font-size: 0.5rem;
+    }
+
+    }
 }

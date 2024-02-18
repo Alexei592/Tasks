@@ -31,11 +31,11 @@ function Autorization()
         })
     }
 
-    return <div>
-        <form className={style.Form} onSubmit={Autoriz}>
+    return <div className="d-flex justify-content-center">
+        <form className={`${style.Form}`} onSubmit={Autoriz}>
             <h3>Авторизация</h3>
-            <input className="col-6" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Введите Email" />
-            <input className="col-6"  value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Введите пароль" />
+            <input className="col-9" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Введите Email" />
+            <input className="col-9"  value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Введите пароль" />
             <button className="col-7">Авторизоваться</button>
             <p style={{color:"red", fontWeight:"bold"}}>{Error}</p>
         </form>

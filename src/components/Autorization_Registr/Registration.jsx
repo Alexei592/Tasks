@@ -44,12 +44,12 @@ function Registration()
         })
     }
 
-    return <div>
+    return <div className="d-flex justify-content-center">
         <form className={style.Form2} onSubmit={Regisrt}>
             <h3>Регистрация</h3>
-            <input className="col-6" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Введите Email" />
-            <input className="col-6"  value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Введите пароль" />
-            <input className="col-6"  value={Podpassword} onChange={(e)=>{setPodPassword(e.target.value)}} type="password" placeholder="Подтвердите пароль" />
+            <input className="col-9" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Введите Email" />
+            <input className="col-9"  value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Введите пароль" />
+            <input className="col-9"  value={Podpassword} onChange={(e)=>{setPodPassword(e.target.value)}} type="password" placeholder="Подтвердите пароль" />
             <button className="col-7">Зарегистрироваться</button>
             <p style={{color:"red", fontWeight:"bold"}}>{Error}</p>
         </form>

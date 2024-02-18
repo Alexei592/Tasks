@@ -9,6 +9,7 @@ import { Autorization } from './components/Autorization_Registr/Autorization';
 import { Registration } from './components/Autorization_Registr/Registration';
 import { All_Information_Attraction,getUsersByMail} from "./functionFirebase";
 import { getFirestore } from "firebase/firestore";
+import s from "./font-size.module.css"
 const API_KEY_MAP=process.env.REACT_APP_API_KEY
 const default_center = {
   lat:53.9,
@@ -81,10 +82,12 @@ function App() {
     <div className="">
     {Aut_User ? (
       <>
-        <div style={{position:"absolute", display:'flex',justifyContent:'space-evenly',flexDirection:"column",marginTop:"-1vw",marginLeft:"1vw"}}>
-        <span>Ваш аккаунт:</span>
-        <h2>{Aut_User.email}</h2>
-        <button style={{borderRadius:"2%",border:"none",backgroundColor:"#008074"}} onClick={()=>Exit_Account()}>Выйти из аккаунта</button>
+        <div className='col-10 d-flex flex-column align-items-start'>
+          <div className='d-flex flex-row align-items-center'>
+          <span className={` ${s.acc} col-4`}>Ваш аккаунт:</span>
+          <span className='fst-italic col-6'>{Aut_User.email}</span>
+          </div>
+          <button style={{backgroundColor:"bisque", color:"#442014"}} className="col-10 rounded border-0 " onClick={()=>Exit_Account()}>Выйти из аккаунта</button>
         </div>
         {isLoaded ? (
           <>
@@ -107,7 +110,7 @@ function App() {
         )}
       </>
     ) : (
-      <div style={{display:"flex", justifyContent:"space-evenly"}}>
+      <div className='d-flex justify-content-center flex-column flex-lg-row'>
       <Autorization/>
       <Registration />
       </div>

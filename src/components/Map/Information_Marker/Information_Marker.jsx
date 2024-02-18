@@ -12,17 +12,17 @@ function Information_Marker({name_attr,all_attraction,set_all_attraction,set_nam
     }
    
 
-    return <div className={`col-4 ${s.container}`}>
-        <img className='col-11' src="attraction.jpg" alt="photo_attraction" />
-        <h2>{name_attr}</h2>
+    return <div className={`col-6 m-1 ${s.container}`}>
+        <img className='col-12' src="attraction.jpg" alt="photo_attraction" />
+        <h1 className='display-6'>{name_attr}</h1>
         <div className={s.izb}>
             {
                 proverka ? (<span onClick={()=>Remove_AttractionYou([name_attr,markerPosition],set_all_attraction)}>Удалить из избранных</span>) 
                 : (<span onClick={()=>Add_AttractionYou([name_attr,markerPosition],set_all_attraction)}>Добавить в избранное</span>)
             }
             
-            <img className='col-1' src="starr.png" alt="" />
-            <button className={`${s.butt} col-2`} onClick={()=>{set_name("",false,undefined)}}>Закрыть</button>
+            <img className='col-2' src="starr.png" alt="" />
+            <button className={`${s.butt} col-4`} onClick={()=>{set_name("",false,undefined)}}>Закрыть</button>
         </div>
     </div>
 }

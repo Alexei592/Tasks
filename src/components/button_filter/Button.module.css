@@ -1,22 +1,16 @@
 .Buttons_Filters
 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 3vw;
-    margin-left: 30vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
+ 
 
     button
     {
         text-align: center;
         background-color: #3b791c;
         color: #ffffff;
-        font-size: 1vw;
         border: none; 
-        border-radius: 0.5vw; 
+        border-radius: 0.5rem; 
         cursor: pointer; 
+        font-weight: 500;
         transition-duration: 0.5s;
     }
 
