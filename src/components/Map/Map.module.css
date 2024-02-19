@@ -16,3 +16,12 @@ body
     background: linear-gradient(45deg, #9890e3, #b1f4cf);
     background-size: cover;
 }
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+    .container
+    {
+        height: 45rem;
+    }
+
+}

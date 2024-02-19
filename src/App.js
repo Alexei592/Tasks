@@ -84,10 +84,10 @@ function App() {
       <>
         <div className='col-10 d-flex flex-column align-items-start'>
           <div className='d-flex flex-row align-items-center'>
-          <span className={` ${s.acc} col-4`}>Ваш аккаунт:</span>
+          <span className={` ${s.acc} col-4 col-md-6`}>Ваш аккаунт:</span>
           <span className='fst-italic col-6'>{Aut_User.email}</span>
           </div>
-          <button style={{backgroundColor:"bisque", color:"#442014"}} className="col-10 rounded border-0 " onClick={()=>Exit_Account()}>Выйти из аккаунта</button>
+          <button style={{backgroundColor:"bisque", color:"#442014"}} className="col-10 rounded border-0 col-md-4 " onClick={()=>Exit_Account()}>Выйти из аккаунта</button>
         </div>
         {isLoaded ? (
           <>

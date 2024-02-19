@@ -4,3 +4,10 @@
         font-size: 4.6vw;
     }
 }
+
+@media screen and (max-width:1023px) and (min-width:768px) {
+    .acc
+    {
+        font-size: 1.5rem;
+    }
+}

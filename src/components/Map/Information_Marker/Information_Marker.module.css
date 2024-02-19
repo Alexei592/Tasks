@@ -1,11 +1,10 @@
 .container
 {
-    height: 50vh;
     background-color: rgb(219, 228, 250);
     margin-left: 2vw;
-
+    align-self: flex-start;
     img{
-        height: 40vh;
+        height: 20vh;
     }
 
  
@@ -23,7 +22,7 @@
     span
     {
         font-weight: 700;
-        font-size: 1vw;
+        font-size: 2vw;
         color: chocolate;
     }
 
@@ -40,7 +39,7 @@
     background-color: blueviolet;
     color:white;
     font-weight: 600;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
 }
 
 .butt:hover
