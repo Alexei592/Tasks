@@ -44,7 +44,7 @@ function Registration()
         })
     }
 
-    return <div className="d-flex justify-content-center">
+    return <div className="d-flex justify-content-center col-lg-4 col-xl-3">
         <form className={style.Form2} onSubmit={Regisrt}>
             <h3>Регистрация</h3>
             <input className="col-9" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Введите Email" />

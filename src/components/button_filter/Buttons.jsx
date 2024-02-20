@@ -47,11 +47,11 @@ const Buttons=({center,set_attractions,set_position,attractions})=>
 
 
     return <div className={`${mod.Buttons_Filters} col-12 d-flex flex-wrap justify-content-center`}>
-        <button className={`col-5 m-2 m-md-3 ${s.acc} p-1`} onClick={() => attraction_func('tourism=museum')}>Музеи</button>
-        <button className={`col-5 m-2 m-md-3 ${s.acc} p-1`} onClick={() => attraction_func('leisure=park')}>Парки</button>
-        <button className={`col-5 m-2 m-md-3 ${s.acc} p-1`} onClick={() => attraction_func('amenity=restaurant')}>Рестораны</button>
-        <button className={`col-5 m-2 m-md-3 ${s.acc} p-1`} onClick={() => attraction_func('amenity=cinema')}>Кинотеатры</button>
-        <button className={`col-8 m-2 m-md-3 ${s.acc} p-1`} onClick={()=>selected_attractions(attractions)}>Выбранные достопримечательности</button>
+        <button className={`col-5 m-2 m-md-3 col-xl-2 ${s.acc} p-1`} onClick={() => attraction_func('tourism=museum')}>Музеи</button>
+        <button className={`col-5 m-2 m-md-3 col-xl-2 ${s.acc} p-1`} onClick={() => attraction_func('leisure=park')}>Парки</button>
+        <button className={`col-5 m-2 m-md-3 col-xl-2 ${s.acc} p-1`} onClick={() => attraction_func('amenity=restaurant')}>Рестораны</button>
+        <button className={`col-5 m-2 m-md-3 col-xl-2 ${s.acc} p-1`} onClick={() => attraction_func('amenity=cinema')}>Кинотеатры</button>
+        <button className={`col-8 m-2 m-md-3 col-xl-2 ${s.acc} p-1`} onClick={()=>selected_attractions(attractions)}>Выбранные достопримечательности</button>
 
     </div>
 }

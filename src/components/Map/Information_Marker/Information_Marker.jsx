@@ -21,7 +21,7 @@ function Information_Marker({name_attr,all_attraction,set_all_attraction,set_nam
                 : (<span onClick={()=>Add_AttractionYou([name_attr,markerPosition],set_all_attraction)}>Добавить в избранное</span>)
             }
             
-            <img className='col-2 col-md-1' src="starr.png" alt="" />
+            <img className={`col-2 col-md-1 ${s.im}`} src="starr.png" alt="" />
             <button className={`${s.butt} col-4`} onClick={()=>{set_name("",false,undefined)}}>Закрыть</button>
         </div>
     </div>

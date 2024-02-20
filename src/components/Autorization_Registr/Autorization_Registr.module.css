@@ -95,6 +95,7 @@
     
     .Form
     {
+        
         height: 30rem;
 
         input
@@ -129,5 +130,90 @@
     }
 
 
+
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    
+    .Form
+    {
+        width: 100%;
+        height: 40rem;
+
+        input
+    {
+        height: 2rem;
+    }
+
+    button
+    {
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+
+    }
+
+    .Form2
+    {
+        width: 100%;
+        height: 40rem;
+        margin-top: 1.5rem;
+
+        input
+        {
+            height: 2rem;
+        }
+
+        button
+        {
+            font-size: 1.2rem;
+            height: 2rem;
+        }
+
+    }
+
+
+
+}
+
+@media screen and (min-width:1200px)
+{
+
+    .Form
+    {
+        width: 100%;
+        height: 37rem;
+
+        input
+    {
+        height: 2rem;
+    }
+
+    button
+    {
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+
+    }
+
+    .Form2
+    {
+        width: 100%;
+        height: 37rem;
+        margin-top: 1.5rem;
+
+        input
+        {
+            height: 2rem;
+        }
+
+        button
+        {
+            font-size: 1.2rem;
+            height: 2rem;
+        }
+
+    }
 
 }

@@ -46,7 +46,7 @@ const Map = ({center,attraction,position_attractions,all_attraction,set_all_attr
           const label = {
             text: name,
             color: 'white',
-            fontSize: '0.8vw',
+            fontSize: '0.9rem',
             fontWeight: '500'
           };
           return <MarkerF

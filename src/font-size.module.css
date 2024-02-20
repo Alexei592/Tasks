@@ -11,3 +11,19 @@
         font-size: 1.5rem;
     }
 }
+
+
+@media screen and (min-width:1024px) and (max-width:1199px) {
+    .acc
+    {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .acc
+    {
+        font-size: 1.3rem;
+    }
+}
+
