@@ -110,7 +110,7 @@ function App() {
         )}
       </>
     ) : (
-      <div className='d-flex justify-content-center flex-column flex-lg-row col-lg-12 justify-content-lg-around mt-lg-5'>
+      <div className='d-flex justify-content-center flex-column flex-lg-row col-lg-12 justify-content-lg-around mt-lg-5qqqqqqqqqqqqqqq'>
       <Autorization/>
       <Registration />
       </div>

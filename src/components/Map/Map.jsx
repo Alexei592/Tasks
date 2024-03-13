@@ -50,7 +50,7 @@ const Map = ({center,attraction,position_attractions,all_attraction,set_all_attr
             fontWeight: '500'
           };
           return <MarkerF
-          key={index}
+          key={`${name}-${index}`}
           position={position}
           label={label}
           onClick={(event) => {
